@@ -2,6 +2,7 @@
 setInterval(setClock, 1000);
 setInterval(playAudio, 1000);
 
+// Creating variables to handle indicators.
 const hourIndicator = document.querySelector('[data-hour-indicator]');
 const minuteIndicator = document.querySelector('[data-minute-indicator]');
 const secondIndicator = document.querySelector('[data-second-indicator]');
@@ -14,6 +15,7 @@ function setClock() {
     const minutesRatio = (secondsRatio + currentDate.getMinutes()) / 60;
     const hoursRatio = (minutesRatio + currentDate.getHours()) / 12;
 
+    // Passing values to setRotation()
     setRotation(secondIndicator, secondsRatio);
     setRotation(minuteIndicator, minutesRatio);
     setRotation(hourIndicator, hoursRatio);
@@ -28,4 +30,5 @@ function playAudio() {
     audioEffect.play();
 }
 
+// Executes setClock() method in page load.
 setClock();
